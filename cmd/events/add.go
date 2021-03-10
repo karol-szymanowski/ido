@@ -8,11 +8,20 @@ import (
 )
 
 func Add(args []string) {
-	file := flag.String("path", "events.log", "File path to log events. Default: events.log")
+	var file string
+	var tag string
+
+	defaultFileName := "~/.event-record/" + internal.DefaultFileName()
+	defaultTag := "cli"
+
+	flag.StringVar(&file, "file", defaultFileName, "File path to log events, eg.: ~/events.log")
+	flag.StringVar(&file, "f", defaultFileName, "File path to log events, eg.: ~/events.log")
+	flag.StringVar(&tag, "tag", defaultTag, "Event tag, eg.: cli")
+	flag.StringVar(&tag, "t", defaultTag, "Event tag, eg.: cli")
 
 	flag.Parse()
 
 	eventBody := strings.Join(args, " ")
-	event := internal.CreateEvent(eventBody, time.Now())
-	internal.AppendFile(*file, event)
+	event := internal.CreateEvent(eventBody, time.Now(), &tag)
+	internal.AppendFile(file, event)
 }
