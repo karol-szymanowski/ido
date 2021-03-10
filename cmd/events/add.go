@@ -11,7 +11,7 @@ func Add(args []string) {
 	var file string
 	var tag string
 
-	defaultFileName := "~/.event-record/" + internal.DefaultFileName()
+	defaultFileName := internal.DefaultFilePath() + internal.DefaultFileName()
 	defaultTag := "cli"
 
 	flag.StringVar(&file, "file", defaultFileName, "File path to log events, eg.: ~/events.log")

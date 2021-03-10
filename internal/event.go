@@ -14,6 +14,11 @@ type Event struct {
 	tag string
 }
 
+type EventRequest struct {
+	Body string `json:"body"`
+	Tag string `json:"tag"`
+}
+
 type event interface {
 	String() string
 	ParseEvent(event string) Event

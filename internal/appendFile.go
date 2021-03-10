@@ -13,6 +13,10 @@ func DefaultFileName() string {
 	return time.Now().Format("2006-01-02") + "-events.log"
 }
 
+func DefaultFilePath() string {
+	return "~/.event-record/"
+}
+
 func parsePath(fileName string) string {
 	usr, _ := user.Current()
 	dir := usr.HomeDir

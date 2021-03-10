@@ -10,6 +10,8 @@ func main() {
 		case "add":
 			args := os.Args[2:]
 			events.Add(args)
+		case "server":
+			events.StartHttpServer()
 		default:
 			args := os.Args[1:]
 			events.Add(args)
