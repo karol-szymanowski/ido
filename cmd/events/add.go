@@ -2,7 +2,7 @@ package events
 
 import (
 	"flag"
-	"github.com/tetrash/event-recorder/internal"
+	"github.com/tetrash/ido/internal"
 	"strings"
 	"time"
 )

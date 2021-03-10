@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/tetrash/event-recorder/cmd/events"
+	"github.com/tetrash/ido/cmd/events"
 	"os"
 )
 

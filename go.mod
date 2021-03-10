@@ -1,3 +1,3 @@
-module github.com/tetrash/event-recorder
+module github.com/tetrash/ido
 
 go 1.15

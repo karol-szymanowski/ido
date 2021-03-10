@@ -3,7 +3,7 @@ package events
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/tetrash/event-recorder/internal"
+	"github.com/tetrash/ido/internal"
 	"net/http"
 	"time"
 )
