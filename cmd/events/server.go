@@ -1,6 +1,7 @@
 package events
 
 import (
+	"flag"
 	"log"
 	"net"
 	"net/http"
@@ -18,7 +19,11 @@ func GetOutboundIP() net.IP {
 	return localAddr.IP
 }
 
-func StartHttpServer() {
+func StartHttpServer(subcommand string, args []string) {
+	serverCommand := flag.NewFlagSet(subcommand, flag.ExitOnError)
+
+	serverCommand.Parse(args)
+
 	http.HandleFunc("/add", AddHandler)
 	machineIp := GetOutboundIP()
 	log.Printf("Starting server on port http://%s:12345", machineIp.String())

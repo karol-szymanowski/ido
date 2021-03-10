@@ -6,14 +6,14 @@ import (
 )
 
 func main() {
+	args := os.Args[2:]
 	switch os.Args[1] {
 		case "add":
-			args := os.Args[2:]
-			events.Add(args)
+			events.Add("add", args)
 		case "server":
-			events.StartHttpServer()
+			events.StartHttpServer("server", args)
 		default:
 			args := os.Args[1:]
-			events.Add(args)
+			events.Add("", args)
 	}
 }
